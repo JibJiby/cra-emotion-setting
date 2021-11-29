@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Global, css } from '@emotion/react';
+import styled from '@emotion/styled';
 import './App.css';
 
+const FlexCenterDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Global
+                styles={css`
+                    .sub-container {
+                        background-color: aqua;
+                    }
+                `}
+            />
+            <FlexCenterDiv>
+                <div
+                    css={css`
+                        background-color: greenyellow;
+                    `}
+                >
+                    메인 컨텐트
+                </div>
+            </FlexCenterDiv>
+            <div className="sub-container">서브 컨텐트</div>
+        </>
+    );
 }
 
 export default App;
